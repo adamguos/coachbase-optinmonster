@@ -1,6 +1,8 @@
 var http = require('http');
 var request = require('request');
 
+var port = process.env.PORT || 3000;
+
 var authKey =
 		'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';
 var sendGridListId = 69751;
@@ -49,4 +51,4 @@ var server = http.createServer(function(req, res) {
 	}
 });
 
-server.listen(3000, '127.0.0.1');
+server.listen(port);
