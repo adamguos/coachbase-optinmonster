@@ -39,10 +39,13 @@ var server = http.createServer(function(req, res) {
 					console.log('SendGrid response: ' + body + '\n');
 				});
 			});
-		});
 
-		res.writeHead(200, {'Content-Type': 'text/plain'});
-		res.end('Received');
+			res.writeHead(200, {
+				'Content-Type': 'text/plain',
+				Location: body.url
+			});
+			res.end('Received');
+		});
 	}
 });
 
