@@ -42,8 +42,10 @@ app.post('/', function(req, res) {
 		});
 	});
 
-	res.redirect(req.body.url);
-})
+	if (req.body.url.length > 0) {
+		res.redirect(req.body.url);
+	}
+});
 
 /*var server = http.createServer(app, function(req, res) {
 	if (req.method == 'POST') {
