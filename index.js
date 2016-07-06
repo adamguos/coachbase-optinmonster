@@ -2,7 +2,7 @@ var express = require('express');
 var request = require('request');
 var bodyParser = require('body-parser');
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 
 var authKey =
 		'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';
@@ -14,6 +14,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
+
+app.get('/', function(req, res) {
+	res.send('Hello, World!')
+});
 
 app.post('/', function(req, res) {
 	console.log(req.body);
